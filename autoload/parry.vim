@@ -1,6 +1,7 @@
 " parry.vim - Graceful pair handling
 " Maintainer:   Zakhary Kaplan <https://github.com/zakharykaplan>
 " Version:      0.1.0
+" SPDX-License-Identifier: Vim
 
 " Get previous character before cursor
 function! parry#PrevChar()
