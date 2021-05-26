@@ -1,15 +1,16 @@
 " parry.vim - Graceful pair handling
 " Maintainer:   Zakhary Kaplan <https://github.com/zakharykaplan>
-" Version:      0.1.0
+" Version:      0.1.1
 " SPDX-License-Identifier: Vim
 
-" Setup:
+" Setup: {{{
 if exists("g:loaded_parry")
   finish
 endif
 let g:loaded_parry = 1
+" }}}
 
-" Options:
+" Options: {{{
 if !exists('g:Parried')
   let g:Parried = {'(': ')', '[': ']', '{': '}',
                  \ "'": "'", '"': '"', '`': '`'}
@@ -17,13 +18,15 @@ endif
 if !exists('g:parry_default_mappings')
   let g:parry_default_mappings = 1
 endif
+" }}}
 
-" Autocmds:
+" Autocmds: {{{
 augroup Parry
   autocmd!
 augroup END
+" }}}
 
-" Mappings:
+" Mappings: {{{
 " Default mappings
 inoremap <expr> <Plug>ParryBS    parry#Backspace()
 inoremap <expr> <Plug>ParryCR    parry#CarriageReturn()
@@ -43,3 +46,6 @@ for [key, value] in items(g:Parried)
   let escaped_value = substitute(value, "'", "''", 'g')
   execute "inoremap <expr> ".value." parry#Close('".escaped_value."')"
 endfor
+" }}}
+
+" vim:fdl=0:fdm=marker:

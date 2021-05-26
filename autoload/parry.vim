@@ -1,6 +1,6 @@
 " parry.vim - Graceful pair handling
 " Maintainer:   Zakhary Kaplan <https://github.com/zakharykaplan>
-" Version:      0.1.0
+" Version:      0.1.1
 " SPDX-License-Identifier: Vim
 
 " Get previous character before cursor
@@ -104,3 +104,5 @@ function! parry#Close(char)
     return a:char
   endif
 endfunction
+
+" vim:fdl=0:fdm=indent:
