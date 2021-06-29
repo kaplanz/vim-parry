@@ -1,5 +1,5 @@
 " parry.vim - Graceful pair handling
-" Maintainer:   Zakhary Kaplan <https://github.com/zakharykaplan>
+" Maintainer:   Zakhary Kaplan <https://zakharykaplan.ca>
 " Version:      0.1.1
 " SPDX-License-Identifier: Vim
 
