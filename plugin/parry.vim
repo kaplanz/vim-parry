@@ -1,6 +1,6 @@
 " parry.vim - Graceful pair handling
 " Maintainer:   Zakhary Kaplan <https://zakharykaplan.ca>
-" Version:      0.1.1
+" Version:      0.1.2
 " SPDX-License-Identifier: Vim
 
 " Setup: {{{
@@ -29,7 +29,7 @@ augroup END
 " Mappings: {{{
 " Default mappings
 inoremap <expr> <Plug>ParryBS    parry#Backspace()
-inoremap <expr> <Plug>ParryCR    parry#CarriageReturn()
+inoremap <expr> <Plug>ParryCR    parry#Return()
 inoremap <expr> <Plug>ParrySpace parry#Space()
 if g:parry_default_mappings
   imap <BS>    <Plug>ParryBS

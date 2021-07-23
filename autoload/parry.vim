@@ -1,6 +1,6 @@
 " parry.vim - Graceful pair handling
 " Maintainer:   Zakhary Kaplan <https://zakharykaplan.ca>
-" Version:      0.1.1
+" Version:      0.1.2
 " SPDX-License-Identifier: Vim
 
 " Get previous character before cursor
@@ -78,7 +78,7 @@ function! parry#Backspace()
 endfunction
 
 " Handle <CR> within pair
-function! parry#CarriageReturn()
+function! parry#Return()
   return parry#AtPair() ? "\<CR>\<Esc>ko" : "\<CR>"
 endfunction
 
