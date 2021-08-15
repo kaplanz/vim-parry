@@ -1,6 +1,6 @@
 " parry.vim - Graceful pair handling
 " Maintainer:   Zakhary Kaplan <https://zakharykaplan.ca>
-" Version:      0.1.2
+" Version:      0.1.3
 " SPDX-License-Identifier: Vim
 
 " Setup: {{{
@@ -28,9 +28,9 @@ augroup END
 
 " Mappings: {{{
 " Default mappings
-inoremap <expr> <Plug>ParryBS    parry#Backspace()
-inoremap <expr> <Plug>ParryCR    parry#Return()
-inoremap <expr> <Plug>ParrySpace parry#Space()
+inoremap <expr> <Plug>ParryBS    parry#bs()
+inoremap <expr> <Plug>ParryCR    parry#cr()
+inoremap <expr> <Plug>ParrySpace parry#space()
 if g:parry_default_mappings
   imap <BS>    <Plug>ParryBS
   imap <CR>    <Plug>ParryCR
@@ -38,13 +38,13 @@ if g:parry_default_mappings
 endif
 " Pair mappings
 for [key, value] in items(g:Parried)
-  " Map keys to parry#Open
+  " Map keys to parry#open
   let escaped_key = substitute(key, "'", "''", 'g')
-  execute "inoremap <expr> ".key." parry#Open('".escaped_key."')"
+  execute "inoremap <expr> ".key." parry#open('".escaped_key."')"
 
-  " Map values to parry#Close (overwrite symmetrical pairs)
+  " Map values to parry#close (overwrite symmetrical pairs)
   let escaped_value = substitute(value, "'", "''", 'g')
-  execute "inoremap <expr> ".value." parry#Close('".escaped_value."')"
+  execute "inoremap <expr> ".value." parry#close('".escaped_value."')"
 endfor
 " }}}
 
